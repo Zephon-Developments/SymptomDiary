@@ -37,15 +37,29 @@ This repository uses a documented workflow so work can be resumed from repositor
   - `Documentation/Handoffs/df-coder_to_df-qa.md`
   - `Documentation/Handoffs/df-qa_to_df-coordinator.md`
 
+## Routing Resolution Rules
+
+- Read `## Current Stage and Status` before acting on any handoff.
+- Treat the `Active routing` line as the authoritative next-step signal.
+- If a handoff is marked `Closed`, it is not actionable for the addressed role even if older findings or a stale requested next action remain elsewhere in the file.
+- If no handoff is active for the current role, stop and redirect to the role named in the current active routing.
+
 ## Required Handoff Contents
 
 - Summary
 - Current stage and status
+- Active routing
 - Scope and constraints
 - Files changed or expected to change
 - Validation run and results
 - Open blockers or risks
 - Explicit next action
+
+## Closed-Handoff Hygiene
+
+- When a handoff is closed, update its summary and explicit next action so they match the closed state.
+- Move older findings into a clearly resolved-history section or remove them if they are no longer needed.
+- Do not leave stale review requests or blocking language in a closed handoff.
 
 ## Repository Boundary Rule
 

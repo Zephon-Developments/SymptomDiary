@@ -26,6 +26,22 @@ These standards define the default engineering expectations for SymptomDiary.
 - Prefer small services for persistence and business rules.
 - Keep widgets readable; extract private widgets when a screen becomes dense.
 
+## State Management
+
+- Riverpod (`flutter_riverpod`) is the selected state management solution.
+- Organise providers alongside the features they serve (e.g., `lib/features/diary/diary_provider.dart`).
+- Prefer `AsyncNotifierProvider` for async data sources (e.g., diary entries loaded from storage).
+- Prefer `NotifierProvider` for synchronous state.
+- Avoid global mutable state outside Riverpod providers.
+
+## Platform Targets
+
+- Target platform: Android only (v1).
+- Minimum Android SDK: API 23 (Android 6.0). Required by `local_auth` for biometric support; practical floor for all v1 package dependencies.
+- Target and maximum Android SDK: API 31 (Android 12). Android 13 and above is not in scope for v1.
+- compileSdkVersion: 31.
+- Do not introduce dependencies that require API 32 or above without explicit approval.
+
 ## Dart and Flutter Conventions
 
 - Types, enums, and extensions use PascalCase.

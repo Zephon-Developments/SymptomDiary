@@ -29,11 +29,24 @@ Examples:
 
 - Summary
 - Current stage and status
+- Active routing
 - Context and constraints
 - Files changed or planned
 - Validation results
 - Open blockers or risks
 - Requested next action
+
+## Routing Precedence
+
+- Read `Current stage and status` before any other section.
+- Use the `Active routing` line as the source of truth for the next actor.
+- Treat closed handoffs as historical context only.
+
+## Closing a Handoff
+
+- When a handoff is closed, rewrite the summary and requested next action so they match the closed state.
+- Remove or clearly archive stale findings, review requests, and blocker language.
+- Do not leave a closed handoff pointing the next action back to the role that has already finished.
 
 ## Boundary Rule
 

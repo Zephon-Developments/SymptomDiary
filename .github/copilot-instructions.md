@@ -23,6 +23,13 @@ SymptomDiary is an Android-first Flutter application for patients with long-term
 - Prefer updating the active plan file rather than creating unnecessary new variants.
 - Handoffs should keep one latest file per source-target pair unless the user explicitly asks for historical snapshots.
 
+## Workflow Routing Guardrails
+- Treat `## Current Stage and Status` in the latest relevant handoff as the canonical routing source.
+- The `Active routing` line controls who acts next. If it points to another role, do not continue work from the current role.
+- If a handoff is marked `Closed`, it is historical context only. Do not act on older findings, review focus, or requested next action elsewhere in that file unless the current stage explicitly says the handoff is active again.
+- When closing a handoff, rewrite `Summary`, `Requested Next Action`, and any review-focus or phase-summary text so they match the closed state.
+- If multiple handoffs mention different next steps, prefer the newest handoff whose current stage is `Active`. If none is active, report that no action is pending and name the current active target if one exists.
+
 ## Engineering Defaults
 - Use Flutter/Dart conventions and keep architecture simple.
 - Prefer explicit models, predictable state, and small testable services.
